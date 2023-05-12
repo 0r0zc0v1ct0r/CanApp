@@ -2,33 +2,26 @@ package com.example.canapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.canapp.databinding.ActivityMainBinding
-import com.example.canapp.databinding.ActivityPantallaInicialBinding
-import com.google.android.material.internal.ViewUtils.hideKeyboard
-import com.google.gson.Gson
+import com.example.canapp.databinding.ActivityPantallaPrincipalBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
-import java.io.IOException
-import java.nio.charset.Charset
 
 class PantallaInicial : AppCompatActivity(), OnQueryTextListener {
 
-    private lateinit var binding: ActivityPantallaInicialBinding
+    private lateinit var binding: ActivityPantallaPrincipalBinding
     private lateinit var adapter: DogAdapter
     private val dogImages = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPantallaInicialBinding.inflate(layoutInflater)
+        binding = ActivityPantallaPrincipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.svDogs.setOnQueryTextListener(this)
         initRecyclerView()

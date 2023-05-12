@@ -19,10 +19,22 @@ class IniciarSesion : AppCompatActivity() {
         val btningresar : Button = findViewById(R.id.btnIngresar)
         val txtemail : TextView = findViewById(R.id.edtEmail)
         val txtpass: TextView = findViewById(R.id.edtPassword)
+        val btnCrear_Cuenta: Button = findViewById(R.id.btnCrearCuenta)
+        val btnRecordar: TextView = findViewById(R.id.btnOlvidar)
         firebaseAuth= Firebase.auth
         btningresar.setOnClickListener()
         {
             singnIn(txtemail.text.toString(),txtpass.text.toString())
+        }
+        btnCrear_Cuenta.setOnClickListener()
+        {
+            val i = Intent(this, CrearCuenta::class.java)
+            startActivity(i)
+        }
+        btnRecordar.setOnClickListener()
+        {
+            val i = Intent(this, RecordarPass::class.java)
+            startActivity(i)
         }
     }
 
@@ -31,10 +43,20 @@ class IniciarSesion : AppCompatActivity() {
         firebaseAuth.signInWithEmailAndPassword(emai,password).addOnCompleteListener(this){ task ->
             if(task.isSuccessful){
                 val user = firebaseAuth.currentUser
-                Toast.makeText(baseContext,"Autentificación Exitosa", Toast.LENGTH_SHORT).show()
-                //aqui vamos a ir a la segunda acivity
-                val  i = Intent( this, PantallaInicial::class.java)
-                startActivity(i)
+                val verifica = user?.isEmailVerified
+                if (verifica==true)
+                {
+
+
+                    Toast.makeText(baseContext, "Autentificación Exitosa", Toast.LENGTH_SHORT)
+                        .show()
+                    //aqui vamos a ir a la segunda acivity
+                    val i = Intent(this, Menu::class.java)
+                    startActivity(i)
+                }else
+                {
+                    Toast.makeText(baseContext, "no ha verificado su correo", Toast.LENGTH_SHORT).show()
+                }
             }
             else
             {
@@ -42,4 +64,5 @@ class IniciarSesion : AppCompatActivity() {
             }
         }
     }
+
 }

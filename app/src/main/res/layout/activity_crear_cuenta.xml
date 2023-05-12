@@ -7,27 +7,14 @@
     android:background="#ffff"
     tools:context="IniciarSesion">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/huella" />
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="60dp"
-        android:text="CanApp"
+        android:text="Crear Cuenta"
         android:textAlignment="center"
         android:textColor="#00BCD4"
         android:textSize="48sp"
@@ -35,25 +22,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="70dp"
-        android:text="Cuidando tu mascota"
-        android:textColor="#00BCD4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/edtEmail"
+        android:id="@+id/edtNombreN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#00BCD4"
+        android:ems="10"
+        android:hint="Nombre de Usuario"
+        android:inputType="textPersonName"
+        android:textColor="#00BCD4"
+        android:textColorHighlight="#00BCD4"
+        android:textColorHint="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/edtEmailN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="40dp"
         android:backgroundTint="#00BCD4"
         android:ems="10"
@@ -65,10 +59,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/edtNombreN" />
 
     <EditText
-        android:id="@+id/edtPassword"
+        android:id="@+id/edtPasswordN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -81,27 +75,44 @@
         android:textColor="#00BCD4"
         android:textColorHint="#00BCD4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailN" />
 
-    <Button
-        android:id="@+id/btnIngresar"
+    <EditText
+        android:id="@+id/edtPasswordNc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#00BCD4"
+        android:ems="10"
+        android:hint="Confirmar Contraseña"
+        android:inputType="textPassword"
+        android:textColor="#00BCD4"
+        android:textColorHint="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPasswordN" />
+
+    <Button
+        android:id="@+id/btnCambiar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/button_rounded"
         android:text="Iniciar Sesión"
         android:textColor="#F4F7F8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOlvidar" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPasswordNc" />
 
     <Button
-        android:id="@+id/btnCrearCuenta"
+        android:id="@+id/btnCrearCuentaN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -115,7 +126,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCambiar" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -127,7 +138,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCrearCuenta"
+        app:layout_constraintTop_toBottomOf="@+id/btnCrearCuentaN"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/google" />
 
@@ -141,22 +152,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCrearCuenta"
+        app:layout_constraintTop_toBottomOf="@+id/btnCrearCuentaN"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/facebook" />
-
-    <TextView
-        android:id="@+id/btnOlvidar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/strOlvidar"
-        android:textColor="#3F51B5"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>
